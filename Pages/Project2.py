@@ -62,29 +62,18 @@ class Project2:
             file_bytes = np.asarray(bytearray(img_file.read()), dtype=np.uint8)
             frame = cv2.imdecode(file_bytes, 1)
             st.image(frame, channels="BGR")
-
-
-
         elif run_button and video_url is not None and source_option in ["Local drive", "RTSP"]:
             self.cap = cv2.VideoCapture(video_url)
 
             if not self.cap.isOpened():
                 st.error("Error")
             else:
-
-
                 stop_button = st.button("Stop!")
-
-
-
                 while self.cap.isOpened() and not stop_button:
-
-
                     ret, frame = self.cap.read()
                     if not ret:
                         st.write("Access denied")
                         break
-
                     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                     frame_place.image(frame, channels="RGB")
 
