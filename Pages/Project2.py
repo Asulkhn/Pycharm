@@ -10,7 +10,7 @@ class Project2:
         self.cap = None
     def app(self):
         st.title('Video stream in Streamlit')
-        source_option = st.selection(
+        source_option = st.selectbox(
             "Pick up source of the video stream",
             ("Mobile camera","YouTUbe link", "Local drive", "Web-camera", "RTSP")
         )
@@ -78,7 +78,7 @@ class Project2:
               frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
               frame_place.image(frame, channels="RGB")
 
-             if stop_button:
+              if stop_button:
                 break
 
            self.cap.release()
