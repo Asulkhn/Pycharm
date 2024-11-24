@@ -9,8 +9,7 @@ import numpy as np
 image = Image.open('images/Th05Yin-YangOrb.png')
 st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
 
-logo_path = os.path.join(os.path.dirname(_file_), "img", "barca.svg")
-pages = [" ",'Home','Project1', 'Project2', 'Project3']
+pages = ['Home','Project1', 'Project2', 'Project3']
 
 styles = {
     "nav": {
@@ -49,7 +48,6 @@ options = {
 
 page = st_navbar(pages,
     styles=styles,
-    logo_path=logo_path,
     options=options)
 
 if page == 'Home':
