@@ -4,7 +4,7 @@ import tempfile
 import numpy as np
 from pathlib import Path
 from yt_dlp import YoutubeDL
-from streamlit_webric import webric_streamer, WebRtcMode
+from streamlit_webrtc import webrtc_streamer, WebRtcMode
 class Project2:
     def __int__(self):
         self.cap = None
@@ -42,9 +42,9 @@ class Project2:
                 temp_file.write(video_file.read())
                 video_url = temp_file.name
                 st.video(video_url)
-        elif source_options == "Web-camera":
+        elif source_option == "Web-camera":
             st.write("It's launching webcam...")
-            webric_streamer(key="webcm",mode=WebRtcMode.SENDRECV)
+            webrtc_streamer(key="webcm",mode=WebRtcMode.SENDRECV)
         elif source_option == "RTSP":
             rtsp_url =st.text_input("Put in a rtsp link")
             if rtsp_url:
