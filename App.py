@@ -3,8 +3,7 @@ from Pages import Home, Project1, Project2, Project3
 from PIL import Image
 image = Image.open('images/Th05Yin-YangOrb.png')
 from streamlit_navigation_bar import st_navbar
-
-st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
+st.set_page_config(initial_sidebar_state="collapsed")
 pages = ['Home', 'Project1', 'Project2', 'Project3']
 styles = {
     "nav": {
